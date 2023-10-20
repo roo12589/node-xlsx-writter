@@ -11,9 +11,6 @@
   "type": "commonjs",
   "license": "ISC",
   "dependencies": {
-    "exceljs": "^4.3.0",
-    "node-xlsx": "^0.23.0",
-    "sheetjs": "^2.0.0",
-    "xlsx": "^0.19.3"
+    "exceljs": "^4.3.0"
   }
 }
