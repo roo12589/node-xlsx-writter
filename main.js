@@ -52,7 +52,7 @@ async function main(mon) {
     const startStr = `${Monday.getMonth() + 1 < 10 ? '0' : ''}${Monday.getMonth() + 1}${Monday.getDate() < 10 ? '0' : ''}${Monday.getDate()}`
     const endStr = `${Friday.getMonth() + 1 < 10 ? '0' : ''}${Friday.getMonth() + 1}${Friday.getDate() < 10 ? '0' : ''}${Friday.getDate()}`
     const filename = `${startStr}-${endStr}`
-    return workbook.xlsx.writeFile(`./out/《岗位饱和度贡献度分析表-${name}》${filename}.xlsx`)
+    return workbook.xlsx.writeFile(`./out/xlsx/《岗位饱和度贡献度分析表-${name}》${filename}.xlsx`)
 }
 
 function getCurrentMonday() {
