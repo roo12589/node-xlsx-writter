@@ -1,6 +1,15 @@
 const Excel = require('exceljs')
 const fs = require('fs')
 
+// 检查文件夹是否存在
+const folderPath = './out/xlsx';
+if (!fs.existsSync(folderPath)) {
+    // 创建文件夹
+    fs.mkdirSync(folderPath, { recursive: true });
+    console.log('文件夹已创建');
+} else {
+    console.log('文件夹已存在');
+}
 // main()
 const Mondays = getMondaysOfYear(new Date().getFullYear())
 Mondays.forEach(monday => {
@@ -68,13 +77,14 @@ function getCurrentMonday() {
 function getMondaysOfYear(year) {
     const mondays = [];
 
+    const currentMonday = getCurrentMonday()
     // 创建一个 Date 对象，初始日期为所给年份的 1 月 1 日
     const date = new Date(year, 0, 1);
 
     // 循环遍历全年的日期
     while (date.getFullYear() === year) {
         // 如果当前日期是周一，将其加入结果数组
-        if (date.getDay() === 1) {
+        if (date.getDay() === 1 && date >= currentMonday) {
             mondays.push(new Date(date));
         }
 
